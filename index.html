@@ -51,14 +51,54 @@
  <body style="background-colour:#FFFFF;margin-left:50px;">
 
   <hr>
-  <h3>Table of Contents</h3>
+<table class="toc-table">
+    <tr>
+        <th>Table of Contents</th>
+    </tr>
+    <tr>
+        <td><b><a href="#Abstract">1. Abstract</a></b></td>
+    </tr>
+    <tr>
+        <td><b><a href="#Introduction">2. Introduction</a></b></td>
+    </tr>
+    <tr>
+        <td><b><a href="#Analysis">3. Analysis and Discussion</a></b></td>
+    </tr>
+    <tr>
+        <td><b><a href="#References">4. References</a></b></td>
+    </tr>
+</table>
 
-<p>
-    <a href="#Abstract">1. Abstract</a><br>
-    <a href="#Introduction">2. Introduction</a><br>
-    <a href="#Analysis">3. Analysis and Discussion</a><br>
-    <a href="#References">4. References</a>
-</p>
+/* TABLE OF CONTENTS TABLE */
+.toc-table {
+    width: 40%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+    margin-left: 0px;
+    font-family: arial, sans-serif;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
+}
+
+.toc-table th {
+    background-color: #e6e6e6;
+    padding: 12px;
+    border: 1px solid #888;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.toc-table td {
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid #888;
+    text-align: left;
+}
+
+.toc-table tr:hover td {
+    background-color: #f5f5f5;
+    transition: 0.2s;
+}
 
   
   <h3>
