@@ -136,7 +136,66 @@
  </p>
 
 
+  <h2 id="H3">H3 – Introduction to JavaScript</h2>
+<hr>
+  <h3>JavaScript Colour Change Example</h3>
+<button id="colorButton">Click me to change colour</button>
+
+<script>
+    var button = document.getElementById("colorButton");
+
+    function changeColor() {
+        var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+        button.style.backgroundColor = randomColor;
+    }
+
+    button.addEventListener("click", changeColor);
+</script>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <h3>Consolidation Task 1 – Alert Text</h3>
+<input type="text" id="alertInput" placeholder="Enter text">
+<button onclick="showAlert()">Show Alert</button>
+
+<script>
+    function showAlert() {
+        var text = document.getElementById("alertInput").value;
+        alert(text);
+    }
+</script>
   
+  <h3>Consolidation Task 2 – Random Number</h3>
+<p id="randomNumber">Click to generate a number:</p>
+<button onclick="generateNumber()">Generate Number</button>
+
+<script>
+    function generateNumber() {
+        var num = Math.floor(Math.random() * 10) + 1;
+        document.getElementById("randomNumber").innerHTML = num;
+    }
+</script>
+  <script>
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Task', 'Hours per Day'],
+      ['Work', 8],
+      ['Sleep', 8],
+      ['Eat', 2],
+      ['Study', 4],
+      ['Exercise', 2]
+    ]);
+
+    var options = { title: 'My Daily Activities' };
+
+    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+</script>
+  <div id="chart_div" style="width: 800px; height: 500px;"></div>
 
   <h3 id="References">References</h3>
 <p class="ex1">
@@ -150,4 +209,21 @@ Guo, Y., 2024. Flying Parker Solar Probe to touch the Sun. Acta Astronautica, 21
  
  
 </head>
+  <div id="lastModified">Loading last modified time...</div>
+<button onclick="getLastUpdatedTime()">Verify Last Modified Time</button>
+
+<script>
+    async function getLastUpdatedTime() {
+        const response = await fetch("https://api.github.com/repos/FEPSFY6938894/FY6938894/commits");
+        const data = await response.json();
+        const lastUpdated = data[0].commit.author.date;
+
+        document.getElementById("lastModified").innerHTML =
+            "Last Modified: " + lastUpdated;
+    }
+
+    // Load timestamp automatically on page load
+    getLastUpdatedTime();
+</script>
+ </body>
 </html>
