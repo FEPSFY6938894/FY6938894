@@ -245,29 +245,32 @@ successfully verified from GitHub API.");
 <p id="totalWordCount"></p>
 <hr>
 <script>
-  // Function to calculate and display word count for a specified section
-  function displayWordCount(sectionId, outputId) {
-    // Get the text content from the specified section
-    const text = document.getElementById(sectionId).textContent;
-    // Split text into words based on spaces and filter out any empty strings
-    const wordArray = text.trim().split(/\s+/);
-    // Count the words
-    const wordCount = wordArray.length;
-    // Return the word count for summing purposes
-    return wordCount;
-  }
-  // Function to calculate and display total word count from selected sections
-  function displayTotalWordCount() {
-    // Calculate word count for each section and accumulate the total
-    const IntroductionCount = displayWordCount("Introduction_InText");
-    const AnalysisCount = displayWordCount("Analysis_InText");
-    // Calculate the sum of all selected sections
-    const totalWordCount = IntroductionCount + AnalysisCount;
-    // Display the total word count
-    document.getElementById("totalWordCount").innerText = Total word count: ${totalWordCount};
-  }
-  // Run the function for specific sections and display total count when the page loads
-  window.onload = displayTotalWordCount;
+  <script>
+function displayWordCount(sectionId) {
+    const element = document.getElementById(sectionId);
+
+    if (!element) {
+        console.error("Section not found: " + sectionId);
+        return 0;
+    }
+
+    const text = element.textContent.trim();
+    const words = text.split(/\s+/);
+    return words.length;
+}
+
+function displayTotalWordCount() {
+    const introCount = displayWordCount("Introduction_InText");
+    const analysisCount = displayWordCount("Analysis_InText");
+
+    const total = introCount + analysisCount;
+
+    document.getElementById("totalWordCount").innerText =
+        `Total Word Count: ${total}`;
+}
+
+window.onload = displayTotalWordCount;
+</script>
 
     <video src="ENG0018 Presentation.mp4" width="800<' height="459" controls>
         </video>
