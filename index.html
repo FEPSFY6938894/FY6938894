@@ -83,10 +83,10 @@
   </h3>
   <h3 id="Introduction">Introduction</h3>
   <p class="ex1">
-   <pre>
+   
+Unmanned Aerial Vehicles are gaining popularity in areas such as environmental monitoring, emergency response and communication support, but their usefulness is still limited by short battery life. Most small UAVs can only remain in the air for a short period before needing to recharge, which restricts long missions and continuous data collection. For this reason, researchers have been exploring solar energy as a way to extend flight duration, as sunlight can provide a steady and renewable power source during flight (El-Atab et al., 2021, Sornek et al., 2025). On comparision, solar-powered UAVs can fly longer than traditional battery-powered drones because they can produce electricity to run the motors or charge the batteries by mounting efficient solar cells on their wings or fuselage.
+Recent studies show that improvements in photovoltaic efficiency, less-weighted aircraft structures and better energy management strategies have made long endurance flights achievable. Engineering approaches such as optimising wing area, and using design tools to select suited configuration for a specific mission are central to improving performance (Bakar et al., 2021). Some researchers also highlight strategies like storing excess solar energy during the day or using altitude changes to save power during low light conditions (Gao et al., 2023). This upgrade indicate that solar-powered UAVs may significantly contribute to future prolonged and environmentally sustainable aerial operations. This article examines engineering techniques and evaluates recent advancements in solar-powered UAV design.
 
-
-   </pre>
  </p>
 
   <h3 id="Analysis">Analysis and Discussion</h3>
@@ -135,78 +135,19 @@
  </p>
 
 
-  <h2 id="H3">H3 – Introduction to JavaScript</h2>
+  <h2 id="H3">H3
 <hr>
-  <h3>JavaScript Colour Change Example</h3>
-<button id="colorButton">Click me to change colour</button>
+ Wing Design and Structural Considerations
+Wing structure is one of the most crucial factors influencing the performance of a solar powered UAV. The wings must generate enough lift to support the aircraft while also providing a large surface area for mounting solar cells. Research shows that long, slender wings are commonly used because they reduce drag and improve aerodynamic efficiency, allowing the aircraft to fly at lower speeds with minimal power consumption (Bakar et al., 2021). At the same time, engineers must ensure that the wings are lightweight but strong enough to carry solar panels without bending excessively. Carbon fibre composites are often used to achieve this balance, as they offer both low weight and good stiffness. However, thin wings can become flexible under certain conditions, which can affect stability and the performance of the solar cells attached to them. This has led researchers to study the aeroelastic behaviour of solar UAV wings to prevent unwanted changes during flight (Cipolla et al., 2023). 
 
-<script>
-    var button = document.getElementById("colorButton");
 
-    function changeColor() {
-        var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
-        button.style.backgroundColor = randomColor;
-    }
+   Energy Generation and Management Strategies
+Even in professionally designed wings, solar energy availability varies throughout the day, meaning that effective energy management is essential for long endurance flight. Modern solar powered UAVs depends  upon photovoltaic cells to convert sunlight into electrical energy, which then powers the motors or charges onboard batteries. When sunlight is strong, the excess energy can be stored for use during periods of low light. Some studies highlight an interesting strategy where the aircraft climbs to higher altitudes during daylight, using plentiful solar energy, and then glides down at night to reduce battery consumption (Gao et al., 2023). This method prolongs flight time without using more energy. Advanced power management systems are also becoming more common, as they help distribute energy efficiently between propulsion, avionics and communication devices. These advancements increase the dependability of solar-powered UAVs for longer missions with varying weather. 
 
-    button.addEventListener("click", changeColor);
-</script>
 
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   Design Optimisation for Long Endurance Missions
+To achieve the best performance, engineers increasingly rely on optimisation techniques during the design process. Computational tools allow researchers to test different combinations of wing shapes, structural materials, battery capacities and solar panel layouts before building the aircraft. Genetic algorithms are one example of these tools and have been used to find the wing geometry that produces the highest endurance for a given mission profile (Bakar et al., 2021). Other studies use multidisciplinary design optimisation, which combines aerodynamics, structure investigation and energy modelling into one system, allowing designers to understand how changes in one area affect the entire aircraft (Li et al., 2020). By cutting waste, increasing energy efficiency, and guaranteeing that every component functions well together, these optimisation techniques assist engineers in developing UAV designs that are efficient for long endurance missions.
 
-  <h3>Consolidation Task 1 – Alert Text</h3>
-<input type="text" id="alertInput" placeholder="Enter text">
-<button onclick="showAlert()">Show Alert</button>
-
-<script>
-    function showAlert() {
-        var text = document.getElementById("alertInput").value;
-        alert(text);
-    }
-</script>
-  
-  <h3>Consolidation Task 2 – Random Number</h3>
-<p id="randomNumber">Click to generate a number:</p>
-<button onclick="generateNumber()">Generate Number</button>
-
-<script>
-    function generateNumber() {
-        var num = Math.floor(Math.random() * 10) + 1;
-        document.getElementById("randomNumber").innerHTML = num;
-    }
-</script>
-  <script>
-  google.charts.load('current', {'packages':['corechart']});
-  google.charts.setOnLoadCallback(drawChart);
-
-  function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-      ['Task', 'Hours per Day'],
-      ['Work', 8],
-      ['Sleep', 8],
-      ['Eat', 2],
-      ['Study', 4],
-      ['Exercise', 2]
-    ]);
-
-    var options = { title: 'My Daily Activities' };
-
-    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-    chart.draw(data, options);
-
-   <table>
-    <tr>
-        <th>Column 1</th>
-        <th>Column 2</th>
-    </tr>
-    <tr>
-        <td>Data 1</td>
-        <td>Data 2</td>
-    </tr>
-</table>
-
-  }
-</script>
-  <div id="chart_div" style="width: 800px; height: 500px;"></div>
 
   <h3 id="References">References</h3>
 <p class="ex1">
