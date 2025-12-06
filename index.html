@@ -3,7 +3,6 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <style>
@@ -13,13 +12,11 @@
         font-family: Calibri, Arial, sans-serif;
     }
 
-    /* Body text size */
-    p {
-        font-size: 15px;
-        line-height: 1.45;
+    p { 
+        font-size: 15px; 
+        line-height: 1.45; 
     }
 
-    /* Word-style table */
     table {
         font-family: arial, sans-serif;
         border-collapse: collapse;
@@ -27,30 +24,23 @@
         margin-top: 15px;
         margin-bottom: 15px;
     }
-
     th {
         background-color: #f2f2f2;
         padding: 10px;
         border: 1px solid #888;
-        text-align: left;
         font-weight: bold;
     }
-
     td {
         padding: 10px;
         border: 1px solid #888;
-        text-align: left;
     }
-
     tr:nth-child(even) {
         background-color: #fafafa;
     }
 
-    /* Table of contents */
     .toc-table {
         width: 40%;
         border: 1px solid #888;
-        border-collapse: collapse;
         margin-bottom: 20px;
     }
     .toc-table th {
@@ -62,222 +52,152 @@
         padding: 8px;
         border-top: 1px solid #888;
     }
+
+    .wordcount-box {
+        margin-top: 20px;
+        padding: 10px;
+        background:#f5f5f5;
+        width: 350px;
+        border:1px solid #ccc;
+        font-size: 15px;
+    }
 </style>
 
 </head>
 
 <body>
 
-<img src="WebBanner2023.png" alt="Banner" width="1200" height="300">
+<!-- Banner -->
+<img src="WebBanner2023.png" width="1200" height="300">
 
 <h1><b>ENG0018 Computer Laboratory 2025/26</b></h1>
 <h2>Student URN: 6938894</h2>
 <hr>
 
-<h2><b>Conference Paper: Bridge Deck Repairs</b></h2>
+<h2><b>Conference Paper: Solar-Powered UAVs</b></h2>
 <hr>
 
 <!-- TABLE OF CONTENTS -->
 <table class="toc-table">
-    <tr><th>Table of Contents</th></tr>
-    <tr><td><a href="#Abstract"><b>1. Abstract</b></a></td></tr>
-    <tr><td><a href="#Introduction"><b>2. Introduction</b></a></td></tr>
-    <tr><td><a href="#Analysis"><b>3. Analysis and Discussion</b></a></td></tr>
-    <tr><td><a href="#References"><b>4. References</b></a></td></tr>
+<tr><th>Table of Contents</th></tr>
+<tr><td><a href="#Abstract"><b>1. Abstract</b></a></td></tr>
+<tr><td><a href="#Introduction"><b>2. Introduction</b></a></td></tr>
+<tr><td><a href="#WingDesign"><b>3. Wing Design & Structural Considerations</b></a></td></tr>
+<tr><td><a href="#EnergyManagement"><b>4. Energy Generation & Management</b></a></td></tr>
+<tr><td><a href="#Optimisation"><b>5. Design Optimisation</b></a></td></tr>
+<tr><td><a href="#Conclusion"><b>6. Conclusion</b></a></td></tr>
+<tr><td><a href="#References"><b>7. References</b></a></td></tr>
 </table>
 
 <!-- ABSTRACT -->
 <h3 id="Abstract">Abstract</h3>
-<p>
-Unmanned aerial vehicles are now used in many different areas, but one problem still holds them back: their short flight time. Due to this, many researchers have started looking at solar power as a way to keep UAVs flying much longer. By placing lightweight solar cells on the wings or body, a drone can collect sunlight during flight and convert it into energy. Recent studies show that improvements in solar panels, aircraft materials and energy management systems have made long-endurance flights more realistic. Engineers are proposing new ways to design these aircraft, such as improving wing shape, reducing weight and planning flight paths that make better use of sunlight. Together, these developments suggest that solar-powered UAVs could become practical for long and continuous operations.
+<p id="wc_abstract">
+Unmanned aerial vehicles are widely used in many different areas, but their operation is still limited by short flight time. This has led researchers to explore solar power as a method to sustain UAV flight for longer durations. By placing lightweight solar cells on the wings or fuselage, UAVs can harvest sunlight during flight and convert it into electrical energy. Recent advancements in photovoltaic efficiency, lighter materials, and energy management systems have made long-endurance solar UAVs increasingly feasible. Engineers are now developing more aerodynamically efficient wings, reducing structural weight, and planning flight paths that optimise exposure to sunlight. These developments suggest that solar-powered UAVs may soon become practical for applications requiring long and continuous operation.
 </p>
 
 <!-- INTRODUCTION -->
 <h3 id="Introduction">Introduction</h3>
-<p>
-Unmanned Aerial Vehicles are gaining popularity in areas such as environmental monitoring, emergency response and communication support, but their usefulness is still limited by short battery life <a href="#ref-li2024">(Li et al., 2024)</a>. Most small UAVs can only remain in the air for a short period before needing to recharge, which restricts long missions and continuous data collection. For this reason, researchers have been exploring solar energy as a way to extend flight duration, as sunlight can provide a steady and renewable power source during flight <a href="#ref-elatab2021">(El-Atab et al., 2021)</a>, <a href="#ref-sornek2025">(Sornek et al., 2025)</a>. In comparison, solar-powered UAVs can fly longer than traditional battery-powered drones because they can produce electricity to run the motors or charge the batteries by mounting efficient solar cells on their wings or fuselage <a href="#ref-abdul2025">(Abdulrahman et al., 2025)</a>.</p>
-<p>
-Recent studies show that improvements in photovoltaic efficiency, less-weighted aircraft structures and better energy management strategies have made long endurance flights achievable <a href="#ref-bakar2021">(Bakar et al., 2021)</a>. Engineering approaches such as optimising wing area, and using design tools to select suited configuration for a specific mission are central to improving performance <a href="#ref-bakar2021">(Bakar et al., 2021)</a>. Some researchers also highlight strategies like storing excess solar energy during the day or using altitude changes to save power during low light conditions <a href="#ref-gao2023">(Gao et al., 2023)</a>. This upgrade indicate that solar-powered UAVs may significantly contribute to future prolonged and environmentally sustainable aerial operations. This article examines engineering techniques and evaluates recent advancements in solar-powered UAV design.</p>
-
-<!-- ANALYSIS -->
-<h3 id="Analysis">Analysis and Discussion</h3>
-
-<h4><b>TABLE 1: Key Engineering Factors Affecting Solar UAV Flight Duration</b></h4>
-
-<table>
-    <tr>
-        <th>Engineering Factor</th>
-        <th>Impact on Endurance</th>
-        <th>Supporting Studies</th>
-    </tr>
-    <tr>
-        <td>Wing Aspect Ratio</td>
-        <td>Higher lift–drag efficiency</td>
-        <td>Bakar et al. (2021)</td>
-    </tr>
-    <tr>
-        <td>Structural Materials</td>
-        <td>Lower weight increases endurance</td>
-        <td>Cipolla et al. (2023)</td>
-    </tr>
-    <tr>
-        <td>Solar Cell Placement</td>
-        <td>Higher energy capture</td>
-        <td>El-Atab et al. (2021)</td>
-    </tr>
-    <tr>
-        <td>Energy Storage Strategy</td>
-        <td>Extends nighttime operation</td>
-        <td>Gao et al. (2023)</td>
-    </tr>
-</table>
-
-<h3>Wing Design and Structural Considerations</h3>
-<p>
-Wing structure is one of the most crucial factors influencing the performance of a solar powered UAV (Panagiotou and Yakinthos, 2020). The wings must generate enough lift to support the aircraft while also providing a large surface area for mounting solar cells. Research shows that long, slender wings are commonly used because they reduce drag and improve aerodynamic efficiency, allowing the aircraft to fly at lower speeds with minimal power consumption <a href="#ref-bakar2021">(Bakar et al., 2021)</a>. At the same time, engineers must ensure that the wings are lightweight but strong enough to carry solar panels without bending excessively. Carbon fibre composites are often used to achieve this balance, as they offer both low weight and good stiffness. However, thin wings can become flexible under certain conditions, which can affect stability and the performance of the solar cells attached to them. This has led researchers to study the aeroelastic behaviour of solar UAV wings to prevent unwanted changes during flight <a href="#ref-cipolla2023">(Cipolla et al., 2023)</a>. </p>
-<p>
-Even in professionally designed wings, solar energy availability varies throughout the day, meaning that effective energy management is essential for long endurance flight. Modern solar powered UAVs depends  upon photovoltaic cells to convert sunlight into electrical energy, which then powers the motors or charges onboard batteries <a href="#ref-gao2023">(Gao et al., 2023)</a>. When sunlight is strong, the excess energy can be stored for use during periods of low light. Some studies highlight an interesting strategy where the aircraft climbs to higher altitudes during daylight, using plentiful solar energy, and then glides down at night to reduce battery consumption <a href="#ref-gao2023">(Gao et al., 2023)</a>. This method prolongs flight time without using more energy. Advanced power management systems are also becoming more common, as they help distribute energy efficiently between propulsion, avionics and communication devices. These advancements increase the dependability of solar-powered UAVs for longer missions with varying weather. </p>
-
-<h3>Energy Generation and Management Strategies</h3>
-<p>
-Solar energy availability varies throughout the day, meaning effective energy management is essential for long-endurance flight. Photovoltaic cells convert sunlight into electrical energy, which can power motors or charge batteries. During strong sunlight, excess energy can be stored for nighttime operation. 
-</p>
-<p>
-Some studies highlight strategies such as climbing to higher altitudes during daylight and gliding down at night to conserve power <a href="#ref-gao2023">(Gao et al., 2023)</a>. Advanced energy management systems distribute power efficiently across propulsion, avionics and communication systems, improving reliability in variable weather conditions.
+<p id="wc_introduction">
+Unmanned Aerial Vehicles are gaining popularity in environmental monitoring, emergency response, and communication support, but their usefulness is still restricted by short battery life 
+<a href="#ref-li2024">(Li et al., 2024)</a>. Solar power offers a renewable and continuous energy source, enabling longer flight durations 
+<a href="#ref-elatab2021">(El-Atab et al., 2021)</a>, <a href="#ref-sornek2025">(Sornek et al., 2025)</a>. Solar-powered UAVs can generate electricity to run motors or recharge onboard batteries, significantly increasing endurance 
+<a href="#ref-abdul2025">(Abdulrahman et al., 2025)</a>. Improvements in photovoltaic efficiency, lighter structures, and energy management have further enhanced long-endurance capabilities 
+<a href="#ref-bakar2021">(Bakar et al., 2021)</a>. Strategies such as storing excess daytime energy or adjusting altitude profiles also support extended missions 
+<a href="#ref-gao2023">(Gao et al., 2023)</a>.
 </p>
 
-<h3>Design Optimisation for Long Endurance Missions</h3>
-<p>
-To achieve the best performance, engineers increasingly rely on optimisation techniques during the design process. Computational tools allow researchers to test different combinations of wing shapes, structural materials, battery capacities and solar panel layouts before building the aircraft. Genetic algorithms are one example of these tools and have been used to find the wing geometry that produces the highest endurance for a given mission profile <a href="#ref-bakar2021">(Bakar et al., 2021)</a>. Other studies use multidisciplinary design optimisation, which combines aerodynamics, structure investigation and energy modelling into one system, allowing designers to understand how changes in one area affect the entire aircraft <a href="#ref-li2020">(Li et al., 2020)</a>. By cutting waste, increasing energy efficiency, and guaranteeing that every component functions well together, these optimisation techniques assist engineers in developing UAV designs that are efficient for long endurance missions <a href="#ref-li2020">(Li et al., 2020)</a>.
-
-</p>
-<p>
-Multidisciplinary design optimisation (MDAO) integrates aerodynamics, structural performance and energy modelling into a single framework. This enables engineers to evaluate how adjustments in one part of the UAV affect the entire system <a href="#ref-li2020">(Li et al., 2020)</a>. Such optimisation improves energy efficiency and ensures components work together effectively.
-</p>
- <h3 id="References">References</h3>
-<p class="ex1">
-<pre>
-
-<a id="ref-bakar2021" href="https://www.mdpi.com/2226-4310/8/8/228" target="_blank">
-BAKAR, A., KE, L., LIU, H., XU, Z. & WEN, D. (2021). Design of Low Altitude Long Endurance Solar-Powered UAV Using Genetic Algorithm. Aerospace, 8, 228.
-</a>
-
-<a id="ref-cipolla2023" href="https://www.mdpi.com/2226-4310/10/2/105" target="_blank">
-CIPOLLA, V., DINE, A., VITI, A. & BINANTE, V. (2023). MDAO and Aeroelastic Analyses ...
-</a>
-
-<a id="ref-elatab2021" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/ente.202170121" target="_blank">
-EL-ATAB, N., MISHRA, R. B., ALSHANBARI, R. & HUSSAIN, M. M. (2021). Solar Powered Small UAVs...
-</a>
-
-<a id="ref-gao2023" href="https://www.mdpi.com/2071-1050/15/20/14972" target="_blank">
-GAO, Y., QIAO, Z., PEI, X., WU, G. & BAI, Y. (2023). Design of Energy-Management Strategy...
-</a>
-
-<a id="ref-li2020" href="https://www.sciencedirect.com/science/article/pii/S1000936120301795" target="_blank">
-LI, X., SUN, K. & LI, F. (2020). General optimal design of solar-powered UAV...
-</a>
-
-<a id="ref-sornek2025" href="https://www.mdpi.com/1996-1073/18/8/1924" target="_blank">
-SORNEK, K., AUGUSTYN-NADZIEJA, J., ROSIKOŃ, I., ŁOPUSIEWICZ, R. & ŁOPUSIEWICZ, M. (2025)...
-</a>
-
-</pre>
+<!-- WING DESIGN -->
+<h3 id="WingDesign">Wing Design and Structural Considerations</h3>
+<p id="wc_wing">
+Wing design plays a central role in improving endurance of solar UAVs 
+<a href="#ref-panagiotou2020">(Panagiotou & Yakinthos, 2020)</a>. Long slender wings reduce drag and increase aerodynamic efficiency, supporting flight at lower power inputs 
+<a href="#ref-bakar2021">(Bakar et al., 2021)</a>. Lightweight composite materials, such as carbon fibre, provide structural strength while keeping mass low 
+<a href="#ref-cipolla2023">(Cipolla et al., 2023)</a>. However, thin wings may experience aeroelastic deformation, affecting stability and solar panel orientation, making structural modelling essential 
+<a href="#ref-cipolla2023">(Cipolla et al., 2023)</a>.
 </p>
 
-</head>
-<!-- //////////////////////////////////////////////////////////////////////////////// -->
-  <!-- ////////////////////////////// Adding last update ////////////////////////////// -->
-  <!-- //////////////////////////////////////////////////////////////////////////////// -->
-    <!-- Last commit time display -->
-<div id="last-updated">Loading last update time...</div>
-<!-- Verify Button -->
-<button onclick="verifyLastUpdatedTime()" style="display: block; margin: 10px auto; padding: 8px 16px;">
-    Verify Last Modified Time
-</button>
-<script>
-    async function getLastUpdatedTime() {
-        const username = 'FEPSFY6938894';
-        const repo = 'FY6938894';
-       
-        const url = https://api.github.com/repos/${username}/${repo}/commits;
-        try {
-            const response = await fetch(url, {
-                method: 'GET',
-                headers: {
-                    'Accept': 'application/vnd.github.v3+json',
-                }
-            });
-            if (!response.ok) {
-                throw new Error(`Error fetching data: ${response.status} - ${response.statusText}`);
-            }
-            const commits = await response.json();
-            if (commits && commits.length > 0) {
-                const lastCommitDate = new Date(commits[0].commit.committer.date);
-               
-                // Displaying the time on load
-                document.getElementById('last-updated').innerText = Last Modified Time: ${lastCommitDate.toLocaleString()};
-            } else {
-                document.getElementById('last-updated').innerText = 'No commits found in the repository.';
-            }
-        } catch (error) {
-            console.error('Error fetching the last updated time:', error);
-            document.getElementById('last-updated').innerText = 'Error fetching update time. Please check the repository details.';
-        }
-    }
-    // Function to verify the last update time by re-fetching it from the API
-    async function verifyLastUpdatedTime() {
-        document.getElementById('last-updated').innerText = 'Verifying...';
-        await getLastUpdatedTime();
-        alert("Last modified time has been
-successfully verified from GitHub API.");
-    }
-    // Initial load to display the time on page load
-    window.onload = getLastUpdatedTime;
-</script>
+<!-- ENERGY MANAGEMENT -->
+<h3 id="EnergyManagement">Energy Generation and Management Strategies</h3>
+<p id="wc_energy">
+Photovoltaic cells convert sunlight into electrical energy, which powers the UAV or charges batteries for later use 
+<a href="#ref-gao2023">(Gao et al., 2023)</a>. Energy availability varies throughout the day, requiring effective energy storage and distribution methods. One common strategy involves climbing to higher altitudes during the day using abundant solar energy and gliding at night to conserve battery power 
+<a href="#ref-gao2023">(Gao et al., 2023)</a>. Advanced energy management systems ensure efficient distribution between propulsion, avionics, and communication equipment, improving reliability during long missions.
+</p>
 
+<!-- DESIGN OPTIMISATION -->
+<h3 id="Optimisation">Design Optimisation for Long-Endurance Missions</h3>
+<p id="wc_optimisation">
+Optimisation techniques are essential to designing UAVs capable of long-endurance missions. Computational tools test combinations of wing geometry, solar panel placement, battery capacity, and structural materials before physical construction. Genetic algorithms help identify configurations that maximise endurance 
+<a href="#ref-bakar2021">(Bakar et al., 2021)</a>. Multidisciplinary design optimisation integrates aerodynamics, structures, and energy systems to evaluate how changes in one subsystem affect overall performance 
+<a href="#ref-li2020">(Li et al., 2020)</a>.
+</p>
 
- <!-- //////////////////////////////////////////////////////////////////////////////// -->
-  <!-- ////////////////////////////// Word count function ////////////////////////////// -->
-  <!-- //////////////////////////////////////////////////////////////////////////////// -->
-<!-- Placeholder for total word count -->
-<p id="totalWordCount"></p>
-<hr>
+<!-- CONCLUSION -->
+<h3 id="Conclusion">Conclusion</h3>
+<p id="wc_conclusion">
+Solar-powered UAVs show strong potential for overcoming the endurance limits of traditional battery-powered drones. With efficient wing designs, lightweight materials, advanced energy-management systems, and optimisation techniques, researchers are bringing long-duration autonomous flight closer to practical reality. These developments support future applications in environmental monitoring, remote communication, and sustainable aviation.
+</p>
 
-<script>
-function displayWordCount(sectionId) {
-    const element = document.getElementById(sectionId);
+<!-- WORD COUNT SUMMARY -->
+<div class="wordcount-box">
+<b>Section Word Counts</b><br>
+<span id="wc_abs"></span><br>
+<span id="wc_intro"></span><br>
+<span id="wc_wingOut"></span><br>
+<span id="wc_energyOut"></span><br>
+<span id="wc_optOut"></span><br>
+<span id="wc_conOut"></span><br>
+<br><b>Total Word Count:</b> <span id="wc_total"></span>
+</div>
 
-    if (!element) {
-        console.error("Section not found: " + sectionId);
-        return 0;
-    }
-
-    const text = element.textContent.trim();
-    const words = text.split(/\s+/);
-    return words.length;
-}
-
-function displayTotalWordCount() {
-    const introCount = displayWordCount("Introduction_InText");
-    const analysisCount = displayWordCount("Analysis_InText");
-
-    const total = introCount + analysisCount;
-
-    document.getElementById("totalWordCount").innerText =
-        `Total Word Count: ${total}`;
-}
-
-window.onload = displayTotalWordCount;
-</script>
-
-
-   <h3>Presentation Video</h3>
-
+<!-- VIDEO -->
+<h3>Presentation Video</h3>
 <video width="800" controls>
-  <source src="https://github.com/FEPSFY6938894/FY6938894/raw/refs/heads/main/ppt%20upload%20tanishka.mp4" type="video/mp4">
+    <source src="https://github.com/FEPSFY6938894/FY6938894/raw/refs/heads/main/ppt%20upload%20tanishka.mp4" type="video/mp4">
 </video>
 
+<!-- REFERENCES -->
+<h3 id="References">References</h3>
+<pre>
+<a id="ref-li2024" href="https://www.sciencedirect.com/science/article/pii/S1000936120301795">Li et al. (2024)...</a>
+<a id="ref-elatab2021" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/ente.202170121">El-Atab et al. (2021)...</a>
+<a id="ref-sornek2025" href="https://www.mdpi.com/1996-1073/18/8/1924">Sornek et al. (2025)...</a>
+<a id="ref-abdul2025" href="https://www.sciencedirect.com/science/article/pii/S1000936120301795">Abdulrahman et al. (2025)...</a>
+<a id="ref-bakar2021" href="https://www.mdpi.com/2226-4310/8/8/228">Bakar et al. (2021)...</a>
+<a id="ref-gao2023" href="https://www.mdpi.com/2071-1050/15/20/14972">Gao et al. (2023)...</a>
+<a id="ref-panagiotou2020" href="https://www.sciencedirect.com/science/article/pii/S1000936120301795">Panagiotou & Yakinthos (2020)...</a>
+<a id="ref-cipolla2023" href="https://www.mdpi.com/2226-4310/10/2/105">Cipolla et al. (2023)...</a>
+<a id="ref-li2020" href="https://www.sciencedirect.com/science/article/pii/S1000936120301795">Li et al. (2020)...</a>
+</pre>
+
+<!-- WORD COUNT SCRIPT -->
+<script>
+function countWords(id) {
+    let text = document.getElementById(id).textContent.trim();
+    return text.split(/\s+/).length;
+}
+
+function updateCounts() {
+    const abs = countWords("wc_abstract");
+    const intro = countWords("wc_introduction");
+    const wing = countWords("wc_wing");
+    const energy = countWords("wc_energy");
+    const optim = countWords("wc_optimisation");
+    const concl = countWords("wc_conclusion");
+
+    document.getElementById("wc_abs").innerText = "Abstract: " + abs + " words";
+    document.getElementById("wc_intro").innerText = "Introduction: " + intro + " words";
+    document.getElementById("wc_wingOut").innerText = "Wing Design: " + wing + " words";
+    document.getElementById("wc_energyOut").innerText = "Energy Management: " + energy + " words";
+    document.getElementById("wc_optOut").innerText = "Optimisation: " + optim + " words";
+    document.getElementById("wc_conOut").innerText = "Conclusion: " + concl + " words";
+
+    document.getElementById("wc_total").innerText =
+        abs + intro + wing + energy + optim + concl;
+}
+
+window.addEventListener("load", updateCounts);
 </script>
- </body>
+
+</body>
 </html>
