@@ -198,6 +198,54 @@ CIPOLLA, V., DINE, A., VITI, A. &amp; BINANTE, V. (2023). MDAO and Aeroelastic A
 LI, X., SUN, K. &amp; LI, F. (2020). General optimal design of solar-powered unmanned aerial vehicle for priority considering propulsion system. <i>Chinese Journal of Aeronautics</i>, 33, 2176–2188.
 </a>
 </p>
+    <!-- //////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ////////////////////////////// Adding last update ////////////////////////////// -->
+  <!-- //////////////////////////////////////////////////////////////////////////////// -->
+    <!-- Last commit time display -->
+<div id="last-updated">Loading last update time...</div>
+<!-- Verify Button -->
+<button onclick="verifyLastUpdatedTime()" style="display: block; margin: 10px auto; padding: 8px 16px;">
+    Verify Last Modified Time
+</button>
+<script>
+    async function getLastUpdatedTime() {
+        const username = 'nr0025';
+        const repo = 'FY0025';
+       
+        const url = `https://api.github.com/repos/${username}/${repo}/commits`;
+        try {
+            const response = await fetch(url, {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/vnd.github.v3+json',
+                }
+            });
+            if (!response.ok) {
+                throw new Error(`Error fetching data: ${response.status} - ${response.statusText}`);
+            }
+            const commits = await response.json();
+            if (commits && commits.length > 0) {
+                const lastCommitDate = new Date(commits[0].commit.committer.date);
+               
+                // Displaying the time on load
+                document.getElementById('last-updated').innerText = `Last Modified Time: ${lastCommitDate.toLocaleString()}`;
+            } else {
+                document.getElementById('last-updated').innerText = 'No commits found in the repository.';
+            }
+        } catch (error) {
+            console.error('Error fetching the last updated time:', error);
+            document.getElementById('last-updated').innerText = 'Error fetching update time. Please check the repository details.';
+        }
+    }
+    // Function to verify the last update time by re-fetching it from the API
+    async function verifyLastUpdatedTime() {
+        document.getElementById('last-updated').innerText = 'Verifying...';
+        await getLastUpdatedTime();
+        alert("Last modified time has been successfully verified from GitHub API.");
+    }
+    // Initial load to display the time on page load
+    window.onload = getLastUpdatedTime;
+</script>
 
 <!-- WORD COUNT SCRIPT -->
 <script>
@@ -210,14 +258,13 @@ function countWords(id) {
 }
 
 function updateCounts() {
-    const abs = countWords("wc_abstract");
     const intro = countWords("wc_introduction");
     const wing = countWords("wc_wing");
     const energy = countWords("wc_energy");
     const optim = countWords("wc_optimisation");
     const concl = countWords("wc_conclusion");
 
-    const total = abs + intro + wing + energy + optim + concl;
+    const total = intro + wing + energy + optim + concl;
     document.getElementById("wc_total").innerText = total + " words";
 }
 
