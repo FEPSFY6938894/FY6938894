@@ -122,6 +122,66 @@ Even in professionally designed wings, solar energy availability varies througho
 To achieve the best performance, engineers increasingly rely on optimisation techniques during the design process. Computational tools allow researchers to test different combinations of wing shapes, structural materials, battery capacities and solar panel layouts before building the aircraft <a href="#ref-bakar2021">(Bakar et al., 2021)</a>. Genetic algorithms are one example of these tools and have been used to find the wing geometry that produces the highest endurance for a given mission profile <a href="#ref-bakar2021">(Bakar et al., 2021)</a>. Other studies use multidisciplinary design optimisation, which combines aerodynamics, structure investigation and energy modelling into one system, allowing designers to understand how changes in one area affect the entire aircraft (Li et al., 2020). By cutting waste, increasing energy efficiency, and guaranteeing that every component functions well together, these optimisation techniques assist engineers in developing UAV designs that are efficient for long endurance missions (Li et al., 2020).
 </p>
 
+<h4>TABLE: Engineering Factors Influencing Solar-Powered UAV Endurance</h4>
+
+<!-- Wrap the table so its text can be counted -->
+<div id="wc_engTable">
+  <table>
+    <tr>
+      <th>Engineering Factor</th>
+      <th>Description</th>
+      <th>Expected Impact on Flight Duration</th>
+      <th>References</th>
+    </tr>
+
+    <tr>
+      <td>Wing Area and Aspect Ratio</td>
+      <td>Larger wings increase lift and provide more surface for solar cells; slender wings reduce drag.</td>
+      <td>Longer endurance due to lower energy consumption and higher solar collection.</td>
+      <td>
+        <a href="#ref-bakar2021">Bakar et al. (2021)</a>,
+        <a href="#ref-cipolla2023">Cipolla et al. (2023)</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Structural Weight</td>
+      <td>Lightweight materials such as carbon fibre reduce total mass while supporting solar panels.</td>
+      <td>Lower power requirement and increased efficiency during cruise.</td>
+      <td><a href="#ref-elatab2021">El-Atab et al. (2021)</a></td>
+    </tr>
+
+    <tr>
+      <td>Solar Cell Efficiency</td>
+      <td>Efficient photovoltaic cells convert sunlight into electrical energy.</td>
+      <td>More power available in flight and faster charging of batteries.</td>
+      <td><a href="#ref-sornek2025">Sornek et al. (2025)</a></td>
+    </tr>
+
+    <tr>
+      <td>Battery Storage Capacity</td>
+      <td>Amount of excess solar energy that can be stored for low-light conditions.</td>
+      <td>Better night operation and improved stability during cloudy periods.</td>
+      <td><a href="#ref-li2020">Li et al. (2020)</a></td>
+    </tr>
+
+    <tr>
+      <td>Energy Management Strategy</td>
+      <td>Includes altitude changes, power distribution, and real-time monitoring of energy flow.</td>
+      <td>Optimises energy use and reduces unnecessary battery drain.</td>
+      <td><a href="#ref-gao2023">Gao et al. (2023)</a></td>
+    </tr>
+
+    <tr>
+      <td>Aerodynamic Design</td>
+      <td>Low-drag aircraft shapes reduce power demand from the motor.</td>
+      <td>Extended flight durations with similar energy consumption.</td>
+      <td><a href="#ref-bakar2021">Bakar et al. (2021)</a></td>
+    </tr>
+  </table>
+</div>
+
+
 <!-- CONCLUSION -->
 <h3 id="Conclusion">Conclusion</h3>
 <p id="wc_conclusion">
@@ -240,23 +300,27 @@ LI, X., SUN, K. &amp; LI, F. (2020). General optimal design of solar-powered unm
 <!-- WORD COUNT SCRIPT -->
 <script>
 function countWords(id) {
-    const el = document.getElementById(id);
-    if (!el) return 0;
-    const text = el.textContent.trim();
-    if (!text) return 0;
-    return text.split(/\s+/).length;
+  const el = document.getElementById(id);
+  if (!el) return 0;
+  const text = el.textContent.trim();
+  if (!text) return 0;
+  return text.split(/\s+/).length;
 }
 
 function updateCounts() {
-    const intro = countWords("wc_introduction");
-    const intro2 = countWords("wc_introduction2");
-    const wing = countWords("wc_wing");
-    const energy = countWords("wc_energy");
-    const optim = countWords("wc_optimisation");
-    const concl = countWords("wc_conclusion");
+  // If you split the introduction into two paragraphs, keep both lines:
+  const intro1 = countWords("wc_introduction");
+  const intro2 = countWords("wc_introduction2") || 0; // safe if you don't have a second intro
+  const wing   = countWords("wc_wing");
+  const energy = countWords("wc_energy");
+  const optim  = countWords("wc_optimisation");
+  const concl  = countWords("wc_conclusion");
 
-    const total = intro + intro2 + wing + energy + optim + concl;
-    document.getElementById("wc_total").innerText = total + " words";
+  // NEW: count words inside the engineering table wrapper
+  const tableWC = countWords("wc_engTable"); // <-- add this
+
+  const total = intro1 + intro2 + wing + energy + optim + concl + tableWC; // <-- include here
+  document.getElementById("wc_total").innerText = total + " words";
 }
 
 window.addEventListener("load", updateCounts);
