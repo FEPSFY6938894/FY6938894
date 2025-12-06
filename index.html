@@ -100,7 +100,7 @@ Unmanned aerial vehicles are widely used in many different areas, but their oper
 <p id="wc_introduction">
 Unmanned Aerial Vehicles are gaining popularity in areas such as environmental monitoring, emergency response and communication support, but their usefulness is still limited by short battery life <a href="#ref-li2024"><a href="#ref-li2024">(Li et al., 2024)</a></a>. Most small UAVs can only remain in the air for a short period before needing to recharge, which restricts long missions and continuous data collection. For this reason, researchers have been exploring solar energy as a way to extend flight duration, as sunlight can provide a steady and renewable power source during flight (El-Atab et al., 2021, Sornek et al., 2025). In comparison, solar-powered UAVs can fly longer than traditional battery-powered drones because they can produce electricity to run the motors or charge the batteries by mounting efficient solar cells on their wings or fuselage <a href="#ref-abdul2025">(Abdulrahman et al., 2025)</a>..
 </p>
-<p id="wc_introduction">
+<p id="wc_introduction2">
 Recent studies show that improvements in photovoltaic efficiency, less-weighted aircraft structures and better energy management strategies have made long endurance flights achievable <a href="#ref-bakar2021">(Bakar et al., 2021)</a>. Engineering approaches such as optimising wing area, and using design tools to select suited configuration for a specific mission are central to improving performance <a href="#ref-bakar2021">(Bakar et al., 2021)</a>. Some researchers also highlight strategies like storing excess solar energy during the day or using altitude changes to save power during low light conditions <a href="#ref-gao2023">(Gao et al., 2023)</a>. This upgrade indicate that solar-powered UAVs may significantly contribute to future prolonged and environmentally sustainable aerial operations. This article examines engineering techniques and evaluates recent advancements in solar-powered UAV design.
 </p>    
 
@@ -249,12 +249,13 @@ function countWords(id) {
 
 function updateCounts() {
     const intro = countWords("wc_introduction");
+    const intro2 = countWords("wc_introduction2");
     const wing = countWords("wc_wing");
     const energy = countWords("wc_energy");
     const optim = countWords("wc_optimisation");
     const concl = countWords("wc_conclusion");
 
-    const total = intro + wing + energy + optim + concl;
+    const total = intro + intro2 + wing + energy + optim + concl;
     document.getElementById("wc_total").innerText = total + " words";
 }
 
